@@ -1,0 +1,3 @@
+grid_setting = {"adaptec1": {"grid_num": 160, "grid_size": 72}, "adaptec2": {"grid_num": 158, "grid_size": 96}, "adaptec3": {"grid_num": 113, "grid_size": 216}, "adaptec4": {"grid_num": 108, "grid_size": 216}, "bigblue1": {"grid_num": 160, "grid_size": 72}, "bigblue2": {"grid_num": 376, "grid_size": 50}, "bigblue3": {"grid_num": 234, "grid_size": 119}, "bigblue4": {"grid_num": 273, "grid_size": 119},"ariane":{"grid_num": 357, "grid_size": 1}}
+
+my_inf = 999999999999
