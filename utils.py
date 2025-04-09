@@ -246,7 +246,7 @@ def greedy_placer_with_init_coordinate(node_id_ls, placedb, grid_num, grid_size,
         placedb.node_info[node_id]["scaled_x"] = scaled_x
         placedb.node_info[node_id]["scaled_y"] = scaled_y
         position_mask = np.ones((grid_num,grid_num)) * my_inf
-        position_mask[:grid_num - scaled_x,:grid_num - scaled_y] = 1
+        position_mask[:grid_num - scaled_x + 1,:grid_num - scaled_y + 1] = 1
         wire_mask = np.ones((grid_num,grid_num)) * 0.1
 
         for key1 in placed_macros.keys():
@@ -363,7 +363,7 @@ def greedy_local_search(queue, placedb, placed_macros, grid_size, grid_num):
         y = placedb.node_info[key]["y"]
         scaled_x = math.ceil(x / grid_size)
         scaled_y = math.ceil(y / grid_size)
-        position_mask[:grid_num - scaled_x,:grid_num - scaled_y] = 1
+        position_mask[:grid_num - scaled_x + 1,:grid_num - scaled_y + 1] = 1
 
         for key1 in placed_macros.keys():
             bottom_left_x = max(0, int(placed_macros[key1]["loc_x"] - placed_macros[key1]["scaled_x"] + 1))
@@ -482,7 +482,7 @@ def bo_placer(node_id_ls, placedb, grid_num, grid_size, place_record, csv_writer
         placedb.node_info[node_id]["scaled_x"] = scaled_x
         placedb.node_info[node_id]["scaled_y"] = scaled_y
         position_mask = np.ones((grid_num,grid_num)) * my_inf
-        position_mask[:grid_num - scaled_x,:grid_num - scaled_y] = 1
+        position_mask[:grid_num - scaled_x + 1,:grid_num - scaled_y + 1] = 1
         wire_mask = np.ones((grid_num,grid_num)) * 0.1
 
         for key1 in placed_macros.keys():
