@@ -253,8 +253,8 @@ def greedy_placer_with_init_coordinate(node_id_ls, placedb, grid_num, grid_size,
 
             bottom_left_x = max(0, placed_macros[key1]["loc_x"] - scaled_x + 1)
             bottom_left_y = max(0, placed_macros[key1]["loc_y"] - scaled_y + 1)
-            top_right_x = min(grid_num - 1, placed_macros[key1]["loc_x"] + placed_macros[key1]["scaled_x"])
-            top_right_y = min(grid_num - 1, placed_macros[key1]["loc_y"] + placed_macros[key1]["scaled_y"])
+            top_right_x = min(grid_num, placed_macros[key1]["loc_x"] + placed_macros[key1]["scaled_x"])
+            top_right_y = min(grid_num, placed_macros[key1]["loc_y"] + placed_macros[key1]["scaled_y"])
 
             position_mask[bottom_left_x:top_right_x,bottom_left_y:top_right_y] = my_inf
         
